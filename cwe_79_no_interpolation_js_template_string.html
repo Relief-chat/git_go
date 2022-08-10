@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>From: {{.from_email}}</h4>
+<h4>To: {{.recipient}}</h4>
+<h4>Subject: {{.subject}}</h4>
+<div class="email" style="display: block;">
+    <!-- ok -->
+    {{.message}}
+</div>
+<div class="email-text" style="display: none;">
+    <!-- ok -->
+    <pre>{{.body}}</pre>
+    <a href="https://example.com/">
+        <h2 class="upper">
+            <!-- ok -->
+            {{.link_text}}
+        </h2>
+    </a>
+</div>
+<hr>
+
+<script>
+// bad
+var x = `hello {{.recipient}}`;
+</script>
+</body>
+</html>
